@@ -31,11 +31,15 @@ The documentation includes:
 - Triggered on `Vehicle_Order__c` create/update
 - Gets nearest `Vehicle_Dealer__c` based on customer location
 - Assigns it to the order
+  📸 Screenshot:  
+  ![Auto Assign Dealer Flow](./flows/AutoAssignDealer_Flow.jpeg)
 
 ### 📌 TestDriveReminder (Scheduled Flow)
 - Scheduled 1 day before `Test_Drive_Date__c`
 - Fetches customer email
 - Sends a reminder email
+  📸 Screenshot:  
+  ![Test Drive Reminder Flow](./flows/TestDriveReminder_Flow.jpeg)
 
 Debug / Manual Test Execution
 To test the batch job from Developer Console:
