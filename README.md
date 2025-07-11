@@ -25,21 +25,38 @@ The documentation includes:
 - Automation, Apex, testing, deployment
 - Screenshots and flow logic
 
+  Apex Development
+  
+Custom Apex logic was implemented to support business rules around vehicle ordering, stock validation, and scheduled updates. The following classes and triggers were created:
+
+📌 VehicleOrderTriggerHandler.cls
+A trigger handler class that modularizes logic for Vehicle_Order__c triggers.
+Prevents order creation if the selected vehicle is out of stock.
+Updates vehicle stock by reducing quantity when an order is confirmed.
+
+📌 VehicleOrderTrigger.trigger
+Calls the VehicleOrderTriggerHandler class on insert and update.
+Executes logic in both before and after contexts.
+
+📌 VehicleOrderBatch.cls
+Batch Apex job that scans for orders with status 'Pending'.
+If stock becomes available, it sets the order status to 'Confirmed' and reduces vehicle stock accordingly.
+
+📌 VehicleOrderBatchScheduler.cls
+Scheduled Apex class that invokes VehicleOrderBatch daily.
+Ensures pending orders are regularly checked and updated based on stock.
+
 🔄 Flows
 
 ### 📌 AutoAssignDealer (Flow)
 - Triggered on `Vehicle_Order__c` create/update
 - Gets nearest `Vehicle_Dealer__c` based on customer location
 - Assigns it to the order
-  📸 Screenshot:  
-  ![Auto Assign Dealer Flow](./flows/AutoAssignDealer_Flow.jpeg)
-
+  
 ### 📌 TestDriveReminder (Scheduled Flow)
 - Scheduled 1 day before `Test_Drive_Date__c`
 - Fetches customer email
 - Sends a reminder email
-  📸 Screenshot:  
-  ![Test Drive Reminder Flow](./flows/TestDriveReminder_Flow.jpeg)
 
 Debug / Manual Test Execution
 To test the batch job from Developer Console:
