@@ -1,0 +1,9 @@
+// 🔁 Run this in Developer Console → Execute Anonymous Window
+
+VehicleOrderBatch job = new VehicleOrderBatch();
+Database.executeBatch(job, 50);
+
+// 💡 What it does:
+// - Picks all Vehicle_Order__c records with Status__c = 'Pending'
+// - If Vehicle__c has Stock_Quantity__c > 0, sets order Status__c = 'Confirmed'
+// - Decreases Stock_Quantity__c by 1
