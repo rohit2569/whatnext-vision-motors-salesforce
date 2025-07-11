@@ -18,3 +18,29 @@ Tech Stack
 - Lightning App Builder & Dynamic Forms
 - 
 📄 [Open Documentation PDF](./WhatsNext_VisionMotors_Project_Documentation.pdf)
+The documentation includes:
+- Project objectives and architecture
+- Phase-wise development details
+- Object model and relationships
+- Automation, Apex, testing, deployment
+- Screenshots and flow logic
+
+🔄 Flows
+
+### 📌 AutoAssignDealer (Flow)
+- Triggered on `Vehicle_Order__c` create/update
+- Gets nearest `Vehicle_Dealer__c` based on customer location
+- Assigns it to the order
+
+### 📌 TestDriveReminder (Scheduled Flow)
+- Scheduled 1 day before `Test_Drive_Date__c`
+- Fetches customer email
+- Sends a reminder email
+
+Debug / Manual Test Execution
+To test the batch job from Developer Console:
+
+### Execute this in Anonymous Window:
+```apex
+VehicleOrderBatch job = new VehicleOrderBatch();
+Database.executeBatch(job, 50);
