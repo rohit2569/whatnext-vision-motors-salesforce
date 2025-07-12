@@ -1,6 +1,9 @@
 Project -- # whatnext-vision-motors-salesforce
 Salesforce CRM project for streamlining vehicle orders, stock validation, and dealer assignment.
 
+USE CASE 
+WhatsNext Vision Motors is revolutionizing its customer experience and operational efficiency with a cutting-edge Salesforce CRM implementation. The project streamlines the vehicle ordering process by auto-assigning orders to the nearest dealer based on customer location and preventing orders for out-of-stock vehicles. Automated workflows update order statuses dynamically and send scheduled email reminders for test drives. Key technical implementations include Apex triggers for stock validation, batch jobs for stock updates, and scheduled Apex for automated order processing. This initiative enhances customer satisfaction, improves order accuracy, and boosts overall operational efficiency.
+
 This project implements a Salesforce CRM solution to manage vehicle orders, stock validation, test drives, and dealer assignments.
 
 Features
@@ -16,8 +19,7 @@ Tech Stack
 - Record-Triggered Flows & Scheduled Flows
 - Salesforce Setup (Roles, Profiles, Sharing Rules)
 - Lightning App Builder & Dynamic Forms
-- 
-📄 [Open Documentation PDF](./WhatsNext_VisionMotors_Project_Documentation.pdf)
+  
 The documentation includes:
 - Project objectives and architecture
 - Phase-wise development details
@@ -25,7 +27,18 @@ The documentation includes:
 - Automation, Apex, testing, deployment
 - Screenshots and flow logic
 
-  Apex Development
+Design Data Model and Security Model
+
+A custom data model was designed using six main custom objects:
+Vehicle__c 
+Vehicle_Dealer__c
+Vehicle_Customer__c
+Vehicle_Order__c
+Vehicle_Test_Drive__c
+Vehicle_Service_Request__c
+
+
+Apex Development
   
 Custom Apex logic was implemented to support business rules around vehicle ordering, stock validation, and scheduled updates. The following classes and triggers were created:
 
