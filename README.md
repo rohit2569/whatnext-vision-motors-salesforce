@@ -24,6 +24,11 @@ Tech Stack
 
 📥 [Download Full Documentation – Whatnext Vision Motors](./Documentation_Whatnext_VisionMotors_project.pdf)
 
+## 📽️ Project Demo Video
+
+You can watch the demo of the project here: [Click to Watch Demo](https://drive.google.com/file/d/1_D_nf-DVATTtDLoOhZtSLycny4EmwtzV/view?usp=sharing)
+
+
 The documentation includes:
 - Project objectives and architecture
 - Phase-wise development details
